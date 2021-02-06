@@ -35,8 +35,9 @@ Create MongoDB with a collection called `users`.
 
 1. Start <code>node run start</code>
 _Change when client side is completed using concurrently_
-2. Go to <code>https://localhost:3001</code> in browser for server
-3. Go to <code>http://localhost:3002</code> in browser for client
+2. Go to <code>https://localhost:5000</code> in browser for server
+3. Go to <code>http://localhost:3000</code> in browser for client
+_Not Completed_
 
 ## Built With
 
