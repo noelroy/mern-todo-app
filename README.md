@@ -1,8 +1,18 @@
 # MERN TODO Project
 
-**Highlights**
+Simple To-do list we application using react and node. 
+
+## Features
 
 + Handling database with [Mongoose](https://mongoosejs.com/)
+
+To-do list:
+
++ Client side
++ User authentication
++ File Upload
++ Support ES6 format
++ Security Mesures
 
 ## Installation
 
@@ -29,7 +39,7 @@ Example (include all of these):
 
 **Create database**
 
-Create MongoDB with a collection called `users`.
+Create MongoDB with a collection called `items`.
 
 ## Usage
 
@@ -41,7 +51,11 @@ _Not Completed_
 
 ## Built With
 
-- [MongoDB](https://github.com/mongodb/mongo) - Database used. Will change in the future when API used instead.
-- [React](https://github.com/facebook/react) - Frontend JavaScript library.
-- [Express](https://github.com/expressjs/express) -Server/routing API for web app.
-- [Node](https://github.com/nodejs/node) - Backend JS runtime.
++ [MongoDB](https://github.com/mongodb/mongo) - Database used. Will change in the future when API used instead.
++ [React](https://github.com/facebook/react) - Frontend JavaScript library.
++ [Express](https://github.com/expressjs/express) -Server/routing API for web app.
++ [Node](https://github.com/nodejs/node) - Backend JS runtime.
+
+## Status
+
+Project is : __in progress__
