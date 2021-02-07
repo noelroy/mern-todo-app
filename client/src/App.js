@@ -1,9 +1,13 @@
 import './App.css';
 import AppNavBar from './components/AppNavBar';
+import ItemList from './components/ItemList'
 
 function App() {
-  return (
+  return (<>
     <AppNavBar></AppNavBar>
+    <br/>
+    <ItemList/>
+    </>
   );
 }
 
