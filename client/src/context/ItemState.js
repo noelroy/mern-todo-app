@@ -1,30 +1,25 @@
-import React from 'react'
-import './item-context'
-import ItemContext from './item-context'
-import {useState} from 'react';
+import React from "react";
+import "./item-context";
+import ItemContext from "./item-context";
+import { useReducer } from "react";
 
+import { itemReducer } from "./item-reducer";
 
 const ItemState = (props) => {
+  const initialState = {
+    items: [
+      { id: 1, title: "Title 1", done: true },
+      { id: 2, title: "Title 2", done: false },
+    ],
+  };
 
-    const [ items, setItems ] = useState([{id : 1, title : "Title 1", done: true},{id : 2, title : "Title 2", done:false}])
+  const [state, dispatch] = useReducer(itemReducer, initialState);
 
-    function addItem(title) {
-        setItems([...items,{id:items[items.length-1].id+1, title:title, done:false}])
-    }
+  return (
+    <ItemContext.Provider value={{ items: state.items, dispatch }}>
+      {props.children}
+    </ItemContext.Provider>
+  );
+};
 
-    function toggleItemStatus(id) {
-        setItems(items.map(x => x.id!==id ? x : {...x,done: !x.done}))
-    }
-
-    function deleteItem(id) {
-        setItems(items.filter(x => x.id!==id))
-    }
-
-    return (
-        <ItemContext.Provider value={{items, addItem, toggleItemStatus, deleteItem}}>
-            {props.children}
-        </ItemContext.Provider>
-    )
-}
-
-export default ItemState
+export default ItemState;

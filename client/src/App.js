@@ -1,7 +1,7 @@
 import "./App.css";
 import AppNavBar from "./components/AppNavBar";
-import ItemList from "./components/ItemList";
-import AddItemForm from "./components/AddItemForm";
+import ItemList from "./components/item/ItemList";
+import AddItemForm from "./components/item/AddItemForm";
 import { Container } from "react-bootstrap";
 import ItemState from './context/ItemState';
 
