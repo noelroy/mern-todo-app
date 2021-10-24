@@ -1,6 +1,6 @@
 # MERN TODO Project
 
-Simple To-do list we application using react and node. 
+Simple To-do list application using react and node. 
 
 ## Features
 
