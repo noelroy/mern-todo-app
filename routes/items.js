@@ -22,6 +22,21 @@ router.post('/', (req, res) => {
   }))
 })
 
+router.put('/:id', (req, res, next) => {
+  console.log('In update call')
+  Item.findOneAndUpdate({ _id: req.params.id }, { $set: req.body }, { new: true, overwrite: false })
+    .then(item => {
+      console.log(item)
+      if (!item) {
+        return next(new AppError('Error', 400, 'Item not found in DB', true))
+      }
+      res.json({
+        success: true,
+        item
+      })
+    })
+})
+
 router.delete('/:id', (req, res, next) => {
   // Item.findById(req.params.id)
   //   .then(item => item.remove().then( item => res.json(item)))

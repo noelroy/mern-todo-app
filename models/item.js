@@ -9,8 +9,9 @@ const ItemSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  due_date: {
-    type: Date
+  current_date: {
+    type: Date,
+    default: Date.now()
   }
 })
 

@@ -4,15 +4,19 @@ Simple To-do list we application using react and node.
 
 ## Features
 
-+ Handling database with [Mongoose](https://mongoosejs.com/)
+### Completed
++ Complete server side
+    + Basic CRUD operations
+    + Handling database with [Mongoose](https://mongoosejs.com/)
++ Complete client side
+    + State management using Context API
 
-To-do list:
+### To-do list:
 
-+ Client side
 + User authentication
 + File Upload
 + Support ES6 format
-+ Security Mesures
++ Security Measures
 
 ## Installation
 
@@ -27,15 +31,12 @@ To-do list:
 
 **Install dependencies**
 
-Run <code>npm install</code> at server folder
++ Run <code>npm install</code>
++ Run <code>npm run client-install</code>
 
-Run <code>npm install</code> at client folder
+**Set env variables**
 
-**Set env variables - Client**
-
-Example (include all of these):
-
-    PORT=5000
+Refer .env.example file in the repo
 
 **Create database**
 
@@ -43,15 +44,12 @@ Create MongoDB with a collection called `items`.
 
 ## Usage
 
-1. Start <code>node run start</code>
-_Change when client side is completed using concurrently_
-2. Go to <code>https://localhost:5000</code> in browser for server
-3. Go to <code>http://localhost:3000</code> in browser for client
-_Not Completed_
+1. Run <code>node run dev</code>  
+__This will start the build in development mode__
 
 ## Built With
 
-+ [MongoDB](https://github.com/mongodb/mongo) - Database used. Will change in the future when API used instead.
++ [MongoDB](https://github.com/mongodb/mongo) - Database used.
 + [React](https://github.com/facebook/react) - Frontend JavaScript library.
 + [Express](https://github.com/expressjs/express) -Server/routing API for web app.
 + [Node](https://github.com/nodejs/node) - Backend JS runtime.

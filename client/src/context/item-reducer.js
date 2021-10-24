@@ -5,33 +5,28 @@ import {
     GET_ITEMS
 } from './action-types';
 
-import { v4 as uuidv4 } from 'uuid';
-
 const itemReducer = (state, action) => {
     switch (action.type) {
         case GET_ITEMS:
             return {
                 ...state,
+                loading : false,
                 items : action.payload
             }
         case ADD_ITEM:
             return {
-                items: [...state.items, {
-                    id: uuidv4(),
-                    title: action.payload.text,
-                    done: false
-                }]
+                ...state,
+                items: [action.payload, ...state.items]
             };
         case TOGGLE_STATUS:
             return {
-                items: state.items.map(x => x.id !== action.payload.id ? x : {
-                    ...x,
-                    done: !x.done
-                })
+                ...state,
+                items: state.items.map(x => x._id !== action.payload._id ? x : action.payload)
             };
         case DELETE_ITEM:
             return {
-                items: state.items.filter(x => x.id !== action.payload.id)
+                ...state,
+                items: state.items.filter(x => x._id !== action.payload)
             };
         default:
             return state;
