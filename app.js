@@ -4,6 +4,7 @@ require('dotenv').config()
 // Import dependencies
 const express = require('express')
 const mongoose = require('mongoose')
+const morgan = require('morgan')
 
 const items = require('./routes/items')
 const { handleError } = require('./utils/ErrorHandler')
@@ -12,6 +13,7 @@ const app = express()
 
 // Middlewares
 app.use(express.json())
+app.use(morgan('dev'))
 
 // Connect to mongo Db
 mongoose

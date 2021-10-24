@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import { Square, CheckSquare, Trash } from "react-bootstrap-icons";
 import { DELETE_ITEM, TOGGLE_STATUS } from "../../context/action-types";
@@ -33,7 +33,7 @@ function Item({ title, done, toggleItemStatus, deleteItem }) {
 }
 
 export default function ItemList() {
-  const { items, dispatch } = useContext(ItemContext);
+  const { items, dispatch, getItems } = useContext(ItemContext);
 
   function toggleStatus (id) {
       dispatch({type: TOGGLE_STATUS, payload: {id}})
@@ -43,14 +43,18 @@ export default function ItemList() {
     dispatch({type: DELETE_ITEM, payload: {id}})
   }
 
+  useEffect(()=>{
+    getItems()
+  }, [])
+
   return (
     <ListGroup>
       {items.map((item) => (
         <Item
-          key={item.id}
+          key={item._id}
           {...item}
-          toggleItemStatus={() => toggleStatus(item.id)}
-          deleteItem={() => deleteItem(item.id)}
+          toggleItemStatus={() => toggleStatus(item._id)}
+          deleteItem={() => deleteItem(item._id)}
         />
       ))}
     </ListGroup>
